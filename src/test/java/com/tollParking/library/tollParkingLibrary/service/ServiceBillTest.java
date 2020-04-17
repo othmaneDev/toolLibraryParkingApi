@@ -35,6 +35,11 @@ public class ServiceBillTest {
     @Before
     public void setup() {
         MockitoAnnotations.initMocks(this);
+        /**
+         *  For any call to the parkingBillRepository
+         *  we use reflexion here to retrieve the ParkingBill that has been saved on data base
+         *  in order to returned it
+         */
         Mockito.when(parkingBillRepository.save(any()))
                 .thenAnswer(
                         (Answer<ParkingBill>) invocation -> {
@@ -55,7 +60,7 @@ public class ServiceBillTest {
         parkingBill.setParkingExitDate(PARKING_EXIT_DATE);
 
         // execute
-        boolean isPricingPolicyChanged= billService.changePricingPolicy(pricingPolicy);
+        boolean isPricingPolicyChanged = billService.changePricingPolicy(pricingPolicy);
         parkingBill = billService.billCustomer(parkingBill);
 
         // asserts
@@ -74,7 +79,7 @@ public class ServiceBillTest {
         parkingBill.setParkingExitDate(PARKING_EXIT_DATE);
 
         // execute changePricingPolicy from bill service
-        boolean isPricingPolicyChanged= billService.changePricingPolicy(pricingPolicy);
+        boolean isPricingPolicyChanged = billService.changePricingPolicy(pricingPolicy);
         parkingBill = billService.billCustomer(parkingBill);
 
         // assert
