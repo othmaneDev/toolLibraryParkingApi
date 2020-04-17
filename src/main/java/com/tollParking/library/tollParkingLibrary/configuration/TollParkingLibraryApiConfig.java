@@ -36,5 +36,5 @@ public class TollParkingLibraryApiConfig {
                 name = "ParkingSlotPricingPolicy",
                 required = true,
                 notes = "The Parking slot pricing policy")
-        private PricingPolicy ParkingSlotPricingPolicy;
+        private PricingPolicy parkingSlotPricingPolicy;
 }

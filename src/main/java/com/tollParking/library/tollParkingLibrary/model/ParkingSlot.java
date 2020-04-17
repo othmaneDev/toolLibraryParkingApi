@@ -59,7 +59,7 @@ public class ParkingSlot {
 
     @Column(name = "is_parking_slot_free", nullable = false)
     public boolean isParkingSlotFree() {
-        return isParkingSlotFree;
+        return this.isParkingSlotFree;
     }
 
     public void setParkingSlotFree(boolean isParkingSlotFree) {

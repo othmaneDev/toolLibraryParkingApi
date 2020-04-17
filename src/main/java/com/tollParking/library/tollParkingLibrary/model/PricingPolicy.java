@@ -11,20 +11,20 @@ import lombok.Data;
 public class PricingPolicy {
 
     @ApiModelProperty(
-            name = "fixedAmountPerHourPricePolicy",
+            name = "fixedAmountPrice",
             required = true,
             value = "8.00",
             notes = "According to this policy :" +
                     "Customer are billed a fixed amount + " +
                     "each hour spent in the parking (fixed amount + nb hours * hour price)")
-    private double fixedAmountPerHourPricePolicy;
+    private double fixedAmountPrice;
 
     @ApiModelProperty(
-            name = "pricePerNumberOfHoursPolicy",
+            name = "pricePerNumberOfHours",
             required = true,
             value = "2",
             notes = "According to this policy :" +
                     "Customer are billed  for each hour spent in the parking (nb hours * hour price)")
-    private double pricePerNumberOfHoursPolicy;
+    private double pricePerNumberOfHours;
 
 }

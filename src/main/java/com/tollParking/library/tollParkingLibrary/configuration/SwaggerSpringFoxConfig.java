@@ -16,15 +16,16 @@ import java.util.Collections;
 @EnableSwagger2
 public class SwaggerSpringFoxConfig {
 
-  /**
-   * After the Docket bean is defined, its select() method returns an instance of
-   * ApiSelectorBuilder, which provides a way to control the endpoints exposed by Swagger.
-   * Predicates for selection of RequestHandlers can be configured with the help of
-   * RequestHandlerSelectors and PathSelectors.
-   * @return a {@link Docket}
-   */
-  @Bean
-  public Docket api() {
+    /**
+     * After the Docket bean is defined, its select() method returns an instance of
+     * ApiSelectorBuilder, which provides a way to control the endpoints exposed by Swagger.
+     * Predicates for selection of RequestHandlers can be configured with the help of
+     * RequestHandlerSelectors and PathSelectors.
+     *
+     * @return a {@link Docket}
+     */
+    @Bean
+    public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 /* Using the following selectors,

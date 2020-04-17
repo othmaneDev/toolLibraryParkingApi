@@ -1,16 +1,12 @@
 package com.tollParking.library.tollParkingLibrary.service;
 
 import com.tollParking.library.tollParkingLibrary.configuration.TollParkingLibraryApiConfig;
-import com.tollParking.library.tollParkingLibrary.helper.SlotTypeHelper;
 import com.tollParking.library.tollParkingLibrary.model.ParkingBill;
 import com.tollParking.library.tollParkingLibrary.model.ParkingSlot;
 import com.tollParking.library.tollParkingLibrary.model.PricingPolicy;
 import com.tollParking.library.tollParkingLibrary.model.SlotType;
 import com.tollParking.library.tollParkingLibrary.repository.ParkingBillRepository;
 import com.tollParking.library.tollParkingLibrary.repository.ParkingSlotRepository;
-import com.tollParking.library.tollParkingLibrary.service.ITollParkingService;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -23,18 +19,20 @@ public class TollParkingService implements ITollParkingService {
 
     private ParkingSlotRepository parkingSlotRepository;
     private ParkingBillRepository parkingBillRepository;
-    private IParkingSlotService parkingSlotService;
     private IBillService billService;
+    private ITollLibraryHelperService tollLibraryHelperService;
 
     private boolean isTollParkingLibraryInitialized;
 
     public TollParkingService(
             IBillService billService,
             ParkingSlotRepository parkingSlotRepository,
-            ParkingBillRepository parkingBillRepository) {
+            ParkingBillRepository parkingBillRepository,
+            ITollLibraryHelperService tollLibraryHelperService) {
         this.billService = billService;
         this.parkingSlotRepository = parkingSlotRepository;
         this.parkingBillRepository = parkingBillRepository;
+        this.tollLibraryHelperService = tollLibraryHelperService;
     }
 
     @Override
@@ -81,7 +79,7 @@ public class TollParkingService implements ITollParkingService {
      */
     public synchronized Optional<ParkingSlot> getFirstAvailableParkingSlot(String plateNumber) {
         //Get the customer car related parking slot type (This operation is random)
-        SlotType customerCarParkingSlotType = SlotTypeHelper.generateRandomSlotType(plateNumber);
+        SlotType customerCarParkingSlotType = tollLibraryHelperService.generateRandomSlotType(plateNumber);
         Optional<ParkingSlot> firstAvailableParkingSlot = parkingSlotRepository.findAll().stream()
                 .filter(parkingSlot -> customerCarParkingSlotType == parkingSlot.getSlotType()
                         && parkingSlot.isParkingSlotFree())

@@ -1,11 +1,7 @@
 package com.tollParking.library.tollParkingLibrary.service;
 
-import com.tollParking.library.tollParkingLibrary.configuration.TollParkingLibraryApiConfig;
 import com.tollParking.library.tollParkingLibrary.model.ParkingBill;
-import com.tollParking.library.tollParkingLibrary.model.ParkingSlot;
 import com.tollParking.library.tollParkingLibrary.model.PricingPolicy;
-
-import java.util.Optional;
 
 public interface IBillService {
 
