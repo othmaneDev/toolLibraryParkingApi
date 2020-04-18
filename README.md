@@ -1,6 +1,6 @@
 # Tool parking API
 
-This is a java REST API of toll parking library built using the following technologies :
+This is a java REST API of a toll parking library built using the following technologies :
 
   - Java 8
   - Lombok
