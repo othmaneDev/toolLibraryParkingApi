@@ -11,9 +11,9 @@ This is a java REST API of a toll parking library built using the following tech
 # Purpose
   The application is used to manage a toll parking : 
    Cars of all types come in and out randomly, the API must :
-        > Send them to the right parking slot of refuse them if there is no slot (of the right type) left.
-        > Mark the parking slot as Free when the car leaves it
-        > Bill the customer when the car leaves.
+        - Send them to the right parking slot of refuse them if there is no slot (of the right type) left.
+        - Mark the parking slot as Free when the car leaves it
+        - Bill the customer when the car leaves.
 		
  The API provides also an in-memory database to store parking slots and parking bills.
  # Prerequisites
