@@ -13,7 +13,7 @@ This is a java REST API of a toll parking library built using the following tech
   
    - Cars of all types come in and out randomly, the API must :
    
-        - Send them to the right parking slot of refuse them if there is no slot (of the right type) left.
+        - Send them to the right parking slot or refuse them if there is no slot (of the right type) left.
         - Mark the parking slot as Free when the car leaves it
         - Bill the customer when the car leaves.
 		
