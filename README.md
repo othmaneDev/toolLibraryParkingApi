@@ -27,9 +27,9 @@ This is a java REST API of a toll parking library built using the following tech
 - Then you can run the application using the following command: `mvn spring-boot:run`
 - The swagger generated documentation can be found at : `http://localhost:7008/tollParkingLibraryApi/swagger-ui.html`
 # API REST endpoints
-- `POST :/initializeLibraryWithConfig` : This action aims to initialize the toll parking library api with a givin configuration, on this configuration the enduser need to provide the following information :
+- `POST :/initializeLibraryWithConfig` : This action aims to initialize the toll parking library api with a given configuration.Thus, the enduser need to provide the following information :
   - The number of parking slots available for each type of car : STANDARD, ELETRIC_CAR_20KW and ELETRIC_CAR_50KW
   - A pricing policy wich consist of a fixed amount and a price per hours spent in the parking.
-- `PUT : /changePricingPolicy` : This action aims to change the initial pricing policy only if givien the price per hours is greated than zero
+- `PUT : /changePricingPolicy` : This action aims to change the initial pricing policy only if given price per hours is greated than zero
 - `GET : /enterParking/{customerCarPlateNumber}` Given a number of car plate number, this action returned a parking slot if available
 - `GET : /leaveParking/{customerCarPlateNumber}` Given a number of car plate number, this action returned a parking bill for the endUser and free the related parking slot
