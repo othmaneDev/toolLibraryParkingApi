@@ -31,5 +31,5 @@ This is a java REST API of a toll parking library built using the following tech
   - The number of parking slots available for each type of car : STANDARD, ELETRIC_CAR_20KW and ELETRIC_CAR_50KW
   - A pricing policy wich consist of a fixed amount and a price per hours spent in the parking.
 - `PUT : /changePricingPolicy` : This action aims to change the initial pricing policy only if given price per hours is greated than zero
-- `GET : /enterParking/{customerCarPlateNumber}` Given a number of car plate number, this action returned a parking slot if available
-- `GET : /leaveParking/{customerCarPlateNumber}` Given a number of car plate number, this action returned a parking bill for the endUser and free the related parking slot
+- `GET : /enterParking/{customerCarPlateNumber}` Given a car plate number, this action returned a parking slot if available
+- `GET : /leaveParking/{customerCarPlateNumber}` Given a car plate number, this action returned a parking bill for the endUser and free the related parking slot
